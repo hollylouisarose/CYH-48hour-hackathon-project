@@ -1,6 +1,30 @@
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom'
+
+import Home from './components/common/Home'
+import HeroGame from './components/heros/HeroGame'
+import Results from './components/heros/Results'
+
 function App() {
-  console.log(process.env.REACT_APP_MY_SUPERHERO_API_KEY)
-  return <h1>Hello World</h1>
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/game">
+          <HeroGame />
+        </Route>
+        <Route path="/result">
+          <Results />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App
+
