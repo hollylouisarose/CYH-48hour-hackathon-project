@@ -1,6 +1,7 @@
 import React from 'react'
-import { getAllHeros } from '../../lib/api'
+import { Link } from 'react-router-dom'
 
+import { getAllHeros } from '../../lib/api'
 import HeroCardLeft from './HeroCardLeft'
 import HeroCardRight from './HeroCardRight'
 
@@ -25,9 +26,11 @@ function getTwoHeros(heroes) {
 
 function getPowerStat() {
   const powerStatArray = ['combat', 'durability', 'intelligence', 'power', 'speed', 'strength']
-  let chosenStat = powerStatArray[Math.floor(Math.random() * 6)]
+  const chosenStat = powerStatArray[Math.floor(Math.random() * 6)]
   return chosenStat
 }
+
+
 
 function HeroGame() {
   const [heroes, setHeroes] = React.useState(null)
@@ -39,8 +42,7 @@ function HeroGame() {
   const [score, setScore] = React.useState(0)
   const [round, setRound] = React.useState(0)
   const [gameOver, setGameOver] = React.useState(false)
-  
- 
+
   const isIntelligenceWin = powerStats === 'intelligence' &&
   playerChoice === heroLeft && heroLeft.powerstats.intelligence > heroRight.powerstats.intelligence ||
   playerChoice === heroRight && heroRight.powerstats.intelligence > heroLeft.powerstats.intelligence
@@ -76,9 +78,7 @@ function HeroGame() {
       scoreCheck()
       setTheRound()
     }
-    getData()
-    
-
+    getData()   
   
   },[hasPlayed])
 
@@ -89,10 +89,9 @@ function HeroGame() {
     } else {
       setPlayerChoice(heroRight) 
     }
-   
     setTimeout(() => {
       setHasPlayed(!hasPlayed)
-    }, 1000)
+    }, 800)
   }
 
   function handleReset() {
@@ -107,14 +106,9 @@ function HeroGame() {
     setRound(0)
     setGameOver(false)
   }
- 
- 
-  console.log('the score', score)
-  console.log('the round', round)
-  console.log('game over', gameOver)
 
   function scoreCheck() {
-    setRound(round +1)
+    setRound(round + 1)
     if (isIntelligenceWin){
       return setScore(score + 1)
     } else if (isPowerWin) {
@@ -141,7 +135,7 @@ function HeroGame() {
 
     
   return (
-    <section>
+    <section className="game-wrapper">
       <div className="container text-centered"> 
 
         { !gameOver && powerStats === 'intelligence' && <p className="text-is-centered">Who is smarter?</p>}
@@ -155,11 +149,12 @@ function HeroGame() {
           <>
             <p>The game is over, your score is {score}</p>
             <button onClick={handleReset} className="button">Play again?</button>
+            <Link to="/"><button className="button"> Back to Home </button></Link> 
           </>}
-        
-        <div className="card-container">
 
-          <div onClick={handleClick} className="columns">
+        <div className="columns">
+
+          <div onClick={handleClick} className="column">
             { !gameOver && heroLeft &&
             <HeroCardLeft 
               key={heroLeft.id}
@@ -167,7 +162,7 @@ function HeroGame() {
             />
             }
           </div>  
-          <div onClick={handleClick} className="columns">
+          <div onClick={handleClick} className="column">
             { !gameOver && heroRight &&
             <HeroCardRight
               key={heroRight.id}

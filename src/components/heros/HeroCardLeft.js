@@ -1,14 +1,10 @@
-// import { Link } from 'react-router-dom'
-
 import React from 'react'
-
 
 function HeroCard ( { heroLeft }) {
 
   return (
-    // <Link>
     <div key={heroLeft.id}> 
-      <div>
+      <div className="column is-half-desktop is-half-tablet ">
         <div className="card">
           <div className="card-content">
             <h3>{heroLeft.name}</h3>
@@ -21,8 +17,6 @@ function HeroCard ( { heroLeft }) {
         </div>
       </div>
     </div>
-      
-  // </Link>
   )
 }
 

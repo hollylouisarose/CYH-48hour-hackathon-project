@@ -7,9 +7,6 @@
   $white: #fff;
 
   body{
-    height: 100vh;
-    background-image: url('/images/backgroundtest.svg');
-    background-size: cover;
     background-color: $heroyellow;
     background-repeat: no-repeat;
     font-family: 'Permanent Marker', sans-serif;
@@ -23,23 +20,49 @@
     }
 
     h3{
-      font-size: 28px;
+      font-size: 32px;
       font-family: 'Permanent Marker', sans-serif;
-    }
-
-    .card-container {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
+      margin-bottom: 10px;
     }
 
     .card {
-      max-height: 200px;
-      margin-right: 50px; 
-      cursor: pointer;
+      margin: 10px;
+      box-shadow: none;
+      p {
+        text-align: center;
+      }
     }
 
-    p {
+    .button {
+      margin-top: 35px;
+      font-family: 'Permanent Marker', sans-serif;
+      background-color: $black;
+      color: $white;
+    }
+
+    .column {
+      margin: 0 auto;
+    }
+
+    .columns:not(.is-desktop) {
+      display: flex;
+      justify-content: center;
+  }
+
+    .game-wrapper {
+      height: 100vh;
+    }
+
+    .white {
+      background-color: $white;
+      padding: 20px;
+    }
+
+    .navbar-brand {
+      padding-left: 20px;
+    }
+
+    .text-is-centered {
       text-align: center;
     }
 

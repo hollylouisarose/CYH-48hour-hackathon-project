@@ -1,19 +1,10 @@
-
-
 import React from 'react'
-
 
 function HeroCard ( { heroRight }) {
 
-  
-
-  const handleClick = () => {
-
-  }
-  
   return (
-    <div onClick={handleClick} key={heroRight.id} > 
-      <div>
+    <div key={heroRight.id} > 
+      <div className="column is-half-desktop is-half-tablet">
         <div className="card">
           <div className="card-content">
             <h3>{heroRight.name}</h3>
@@ -26,10 +17,6 @@ function HeroCard ( { heroRight }) {
         </div>
       </div>
     </div>
-
-
-
-      
   )
 }
 
