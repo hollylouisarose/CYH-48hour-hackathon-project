@@ -71,6 +71,7 @@ function HeroGame() {
     const getData = async () => {
       const response = await getAllHeros()
       setHeroes(response.data)
+      console.log(heroes)
       const [first, second] = getTwoHeros(response.data)
       setHeroLeft(first)
       setHeroRight(second)
