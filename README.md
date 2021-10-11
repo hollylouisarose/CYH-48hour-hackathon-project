@@ -53,8 +53,6 @@ Before coding, we mapped out our game flow as we felt this would help us hone in
 
 ![Gameplay diagram](images/diagramgameplay.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## The Build
 
 ### Selecting and setting two heroes:
@@ -205,3 +203,4 @@ You also have to be an empathetic and supportive team player and work out the be
 
 I really enjoyed working with Theo and am excited to work on more projects in the future with even bigger teams.
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
